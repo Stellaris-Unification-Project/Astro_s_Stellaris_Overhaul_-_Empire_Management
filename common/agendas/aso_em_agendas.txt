@@ -1,0 +1,758 @@
+#Agrarian Idyll - Bountiful Harvest (+25% Food Production)
+#Aristocratic Elite - Tournaments & Feasts (-75% Leader Energy Upkeep)
+#Barbaric Despoilers - Scourge of God (+25% Bombardment Damage)
+#Byzantine Bureaucracy - Bureaucratic Efficiency Initiative (-50% Bureaucrat Upkeep)
+#Citizen Service - Special Forces Doctrine (+50% Army Damage)
+#Corvee System - Mandatory Diaspora (+3 pops for new colonies)
+#Cutthroat Politics - Lobbying Reform (+25% Faction Influence)
+#Diplomatic Corps - Diplomatic Reset (+25% Diplomatic Weight)
+#Distinguished Admiralty - Fleet Modernization Program (-25% Ship Upgrade Cost)
+#Efficient Bureaucracy - Eliminate Government Waste (-25% Building Cost/Upkeep)
+#Environmentalist - Back To Nature Movement (-25% Consumer Goods Upkeep)
+#Exalted Priesthood - Tithing Program (+1 Priest Job per 50 Pops)
+#Fanatic Purifier - Scorched Earth (+25% Bombardment Damage)
+#Feudal Society - Suzerainty Reinforcement (+25% Tributary Income)
+#Free Haven - Civics Education Program (+25% Government Ethics Attraction)
+#Functional Architecture - Functional Fleet (-10% Ship Upkeep/Build Cost)
+#Idealistic Foundation - Unending Idealism (+50% Egalitarian Attraction)
+#Imperial Cult - Supreme Leader (+2 Max Ruler Skill Levels)
+#Inwards Perfection - Fight For Every Inch (+25% Home Territory Fire Rate/Defense Army Damage)
+#Merchant Guilds - Economic Revitalization (+50% Trade Attractiveness)
+#Meritocracy - Equality of Opportunity (+5% Pop Happiness)
+#Mining Guilds - Mining Productivity (+1 Miner Mineral Production)
+#Nationalistic Zeal - Manifest Destiny (-15% Claim Influence Cost/War Exhaustion)
+#Philosopher King - Erudite (+5% Research Speed)
+#Police State - Big Brother Program (+1 Enforcer Job per 20 Pops)
+#Shadow Council - Deep State Politics (+25% Faction Influence)
+#Shared Burdens - Freedom For All (+50% Egalitarian Attraction)
+#Slaver Guilds - Increased Slave Output (+15% Slave Production)
+#Technocracy - Technology Focus (+15% Researcher Production)
+#Warrior Culture - Elite Training Programs (+300 Army Starting Experience)
+#
+#Megacorps:
+#Brand Loyalty - Brand Development (+25% Trust Growth)
+#Criminal Heritage - Underworld Consolidation (-25% Branch Office Sprawl)
+#Franchising - Franchise Fees Adjustment (+25% Tributary Income)
+#Free Traders - Trade Diplomacy (+25% Trade Attractiveness)
+#Gospel of the Masses - Televangelism (+1 Priest Job per 50 Pops)
+#Indentured Assets - Motivational Speaking (+15% Slave Production)
+#Media Conglomerate - Spin Campaign (+5% Pop Happiness)
+#Naval Contractors - Industrial Espionage (+25% Voidcraft Research Speed)
+#Private Military Companies - Optimized Training Processes (+300 Army Starting Experience)
+#Private Prospectors - Colonization Incentives (+3 Pops for New Colonies)
+#Public Relations Specialists - Public Relations Reset (+25% Diplomatic Weight)
+#Ruthless Competition - Organizational Restructuring (-90% Leader Cost)
+#Trading Posts - Starbase Modernization (-25% Starbase Upgrade Cost)
+
+### AGENDAS ####
+agenda_aso_em_bountiful_harvest = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_agrarian_idyll } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_agrarian_idyll }
+		}
+	}
+	modifier = { planet_farmers_food_produces_mult = 0.25 }
+}
+
+agenda_aso_em_tournaments_and_feasts = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_aristocratic_elite } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_aristocratic_elite }
+		}
+	}
+	modifier = { leaders_energy_upkeep_mult = -0.75 }
+}
+
+agenda_aso_em_bureauocratic_efficiency_initiative = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_byzantine_bureaucracy } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_byzantine_bureaucracy }
+		}
+	}
+	modifier = { planet_bureaucrats_upkeep_mult = 0.50 }
+}
+
+agenda_aso_em_special_forces_doctrine = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_citizen_service } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_citizen_service }
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = general
+		}
+	}
+	modifier = { army_damage_mult = 0.50 }
+}
+
+agenda_aso_em_mandatory_diaspora = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_corvee_system } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_corvee_system }
+		}
+	}
+	modifier = { colony_start_num_pops_add = 3 }
+}
+
+agenda_aso_em_lobbying_reform = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_cutthroat_politics } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_cutthroat_politics }
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = governor
+		}
+	}
+	modifier = { pop_factions_produces_mult = 0.25 }
+}
+
+agenda_aso_em_diplomatic_reset = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_diplomatic_corps } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_diplomatic_corps }
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = governor
+		}
+	}
+	modifier = { diplo_weight_mult = 0.25 }
+}
+
+agenda_aso_em_fleet_modernization_program = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_distinguished_admiralty } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_distinguished_admiralty }
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = admiral
+		}
+	}
+	modifier = { country_ship_upgrade_cost_mult = -0.25 }
+}
+
+agenda_aso_em_eliminate_government_waste = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_efficient_bureaucracy } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_efficient_bureaucracy }
+		}
+	}
+	modifier = {
+		planet_structures_cost_mult = -0.25
+		planet_structures_upkeep_mult = -0.25
+	}
+}
+
+agenda_aso_em_back_to_nature_movement = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_environmentalist } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_environmentalist }
+		}
+	}
+	modifier = { planet_pops_consumer_goods_upkeep_mult = -0.25 }
+}
+
+agenda_aso_em_tithing_campaign = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_exalted_priesthood } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_exalted_priesthood }
+		}
+	}
+	modifier = { job_priest_per_pop = 0.02 }
+}
+
+agenda_aso_em_suzerainty_reinforcement = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_feudal_realm } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_feudal_realm }
+		}
+	}
+	modifier = { subject_tribute_mult = 0.25 }
+}
+
+agenda_aso_em_civics_education_programs = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_free_haven } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_free_haven }
+		}
+	}
+	modifier = { pop_government_ethic_attraction = 0.25 }
+}
+
+agenda_aso_em_functional_fleet = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_functional_architecture } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_functional_architecture }
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = admiral
+		}
+	}
+	modifier = {
+		ships_upkeep_mult = -0.10
+		starbase_shipyard_build_cost_mult = -0.10
+	}
+}
+
+agenda_aso_em_unending_idealism = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_idealistic_foundation } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_idealistic_foundation }
+		}
+	}
+	modifier = { pop_ethic_egalitarian_attraction_mult = 0.50 }
+}
+
+agenda_aso_em_supreme_leader = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_imperial_cult } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_imperial_cult }
+		}
+	}
+	modifier = { ruler_skill_levels = 2 }
+}
+
+agenda_aso_em_fight_for_every_inch = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_inwards_perfection } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_inwards_perfection }
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = general
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = admiral
+		}
+	}
+	modifier = {
+		ship_home_territory_fire_rate_mult = 0.25
+		army_defense_damage_mult = 0.25
+	}
+}
+
+agenda_aso_em_equality_of_opportunity = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_meritocracy } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_meritocracy }
+		}
+	}
+	modifier = { pop_happiness = 0.05 }
+}
+
+agenda_aso_em_increase_mining_productivity = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_mining_guilds } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_mining_guilds }
+		}
+	}
+	modifier = { planet_miners_minerals_produces_add = 1 }
+}
+
+agenda_aso_em_manifest_destiny = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_nationalistic_zeal } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_nationalistic_zeal }
+		}
+	}
+	modifier = {
+		country_claim_influence_cost_mult = -0.15
+		country_war_exhaustion_mult = -0.15
+	}
+}
+
+agenda_aso_em_erudite = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_philosopher_king } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_philosopher_king }
+		}
+	}
+	modifier = { all_technology_research_speed = 0.05 }
+}
+
+agenda_aso_em_big_brother_program = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_police_state } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_police_state }
+		}
+	}
+	modifier = { job_enforcer_per_pop = 0.05 }
+}
+
+agenda_aso_em_deep_state_politics = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_shadow_council } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_shadow_council }
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = governor
+		}
+	}
+	modifier = { pop_factions_produces_mult = 0.25 }
+}
+
+agenda_aso_em_freedom_for_all = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_shared_burden } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_shared_burden }
+		}
+	}
+	modifier = { pop_ethic_egalitarian_attraction_mult = 0.50 }
+}
+agenda_aso_em_increased_slave_output = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_slaver_guilds } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_slaver_guilds }
+		}
+	}
+	modifier = { planet_jobs_slave_produces_mult = 0.15 }
+}
+
+agenda_aso_em_technology_focus = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_technocracy } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_technocracy }
+		}
+	}
+	modifier = { planet_researchers_produces_mult = 0.15 }
+}
+
+agenda_aso_em_elite_training_programs = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_warrior_culture } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_warrior_culture }
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = general
+		}
+	}
+	modifier = { army_starting_experience_add = 300 }
+}
+
+agenda_aso_em_scorched_earth = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_fanatic_purifiers } }
+		}
+		modifier = {
+			factor = 1.5
+			from = {
+				has_valid_civic = civic_fanatic_purifiers
+			}
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = admiral
+		}
+	}
+	modifier = { ship_orbital_bombardment_mult = 0.25 }
+}
+
+agenda_aso_em_sourge_of_god = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_barbaric_despoilers } }
+		}
+		modifier = {
+			factor = 1.5
+			from = {
+				has_valid_civic = civic_barbaric_despoilers
+			}
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = admiral
+		}
+	}
+	modifier = { ship_orbital_bombardment_mult = 0.25 }
+}
+
+agenda_aso_em_economic_revitalization = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_merchant_guilds } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_merchant_guilds }
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = governor
+		}
+	}
+	modifier = { country_trade_attractiveness = 0.50 }
+}
+
+agenda_aso_em_brand_development = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_brand_loyalty } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_brand_loyalty }
+		}
+	}
+	modifier = { country_trust_growth = 0.25 }
+}
+
+agenda_aso_em_underworld_consolidation = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_criminal_heritage } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_criminal_heritage }
+		}
+	}
+	modifier = { empire_size_branch_office_mult = -0.25 }
+}
+
+agenda_aso_em_franchise_fees_adjustment = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_franchising } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_franchising }
+		}
+	}
+	modifier = { subject_tribute_mult = 0.25 }
+}
+
+agenda_aso_em_trade_diplomacy = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_free_traders } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_free_traders }
+		}
+	}
+	modifier = { country_trade_attractiveness = 0.25 }
+}
+
+agenda_aso_em_televangelism = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_gospel_of_the_masses } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_gospel_of_the_masses }
+		}
+	}
+	modifier = { job_priest_per_pop = 0.02 }
+}
+
+agenda_aso_em_motivational_speaking = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_indentured_assets } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_indentured_assets }
+		}
+	}
+	modifier = { planet_jobs_slave_produces_mult = 0.15 }
+}
+
+agenda_aso_em_spin_campaign = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_media_conglomerate } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_media_conglomerate }
+		}
+	}
+	modifier = { pop_happiness = 0.05 }
+}
+
+agenda_aso_em_industrial_espionage = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_naval_contractors } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_naval_contractors }
+		}
+	}
+	modifier = { category_voidcraft_research_speed_mult = 0.25 }
+}
+
+agenda_aso_em_optimized_training_processes = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_private_military_companies } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_private_military_companies }
+		}
+	}
+	modifier = { army_starting_experience_add = 300 }
+}
+
+agenda_aso_em_colonization_incentives = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_private_prospectors } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_private_prospectors }
+		}
+	}
+	modifier = { colony_start_num_pops_add = 3 }
+}
+
+agenda_aso_em_public_relations_reset = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_public_relations_specialists } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_public_relations_specialists }
+		}
+		modifier = {
+			factor = 1.5
+			leader_class = governor
+		}
+	}
+	modifier = { diplo_weight_mult = 0.25 }
+}
+
+agenda_aso_em_organizational_restructuring = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_ruthless_competition } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_ruthless_competition }
+		}
+	}
+	modifier = { leader_cost_empire_size_mult = -0.9 }
+}
+
+agenda_aso_em_starbase_modernization = {
+	weight_modifier = {
+		weight = 100
+		modifier = {
+			factor = 0
+			from = { NOT = { has_valid_civic = civic_trading_posts } }
+		}
+		modifier = {
+			factor = 1.5
+			from = { has_valid_civic = civic_trading_posts }
+		}
+	}
+	modifier = { starbase_upgrade_cost_mult = -0.25 }
+}

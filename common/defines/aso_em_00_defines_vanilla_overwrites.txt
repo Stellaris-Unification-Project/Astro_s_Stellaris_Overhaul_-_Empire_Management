@@ -1,0 +1,82 @@
+	NGameplay = {
+#		LEADER_RULER_MONARCH_EXPERIENCE								= 5.0
+		LEADER_RULER_MONARCH_EXPERIENCE								= 7.5
+
+#		LEADER_RULER_HEIR_EXPERIENCE								= 1.0
+		LEADER_RULER_HEIR_EXPERIENCE								= 1.5
+		
+#		LEADER_ADMIRAL_FLEET_COMBAT_BASE_EXPERIENCE					= 5 # Leader Admiral base experience from fleet combat
+		LEADER_ADMIRAL_FLEET_COMBAT_BASE_EXPERIENCE					= 7.5 # Leader Admiral base experience from fleet combat
+
+#		LEADER_ADMIRAL_FLEET_COMBAT_SHIPS_KILLED_CONVERSION			= 0.05 # Scale factor for total number of ships killed after combat when calculating experience gain for Admiral
+		LEADER_ADMIRAL_FLEET_COMBAT_SHIPS_KILLED_CONVERSION			= 0.07 # Scale factor for total number of ships killed after combat when calculating experience gain for Admiral
+
+#		LEADER_ADMIRAL_FLEET_COMBAT_SHIPS_DISENGAGED_CONVERSION		= 0.025 # Scale factor for total number of ships that disengaged after combat when calculating experience gain for Admiral
+		LEADER_ADMIRAL_FLEET_COMBAT_SHIPS_DISENGAGED_CONVERSION		= 0.038 # Scale factor for total number of ships that disengaged after combat when calculating experience gain for Admiral
+
+#		LEADER_ADMIRAL_FLEET_PIRACY_SUPPRESSION_DAILY				= 0.05 # Leader Admiral base experience from piracy suppression
+		LEADER_ADMIRAL_FLEET_PIRACY_SUPPRESSION_DAILY				= 0.07 # Leader Admiral base experience from piracy suppression
+		
+#		LEADER_GENERAL_GROUND_COMBAT_BASE_EXPERIENCE				= 100 # Leader General base experience from ground combat
+		LEADER_GENERAL_GROUND_COMBAT_BASE_EXPERIENCE				= 150 # Leader General base experience from ground combat
+
+#		LEADER_GENERAL_GROUND_COMBAT_ARMIES_KILLED_CONVERSION		= 0.25 # Scale factor for total number of armies killed after combat when calculating experience gain for General
+		LEADER_GENERAL_GROUND_COMBAT_ARMIES_KILLED_CONVERSION		= 0.38 # Scale factor for total number of armies killed after combat w
+
+#		LEADER_SCIENTIST_LEADING_RESEARCH_FIELD_EXPERIENCE			= 3.5
+		LEADER_SCIENTIST_LEADING_RESEARCH_FIELD_EXPERIENCE			= 5.2
+
+#		LEADER_SCIENTIST_SURVEY_EXPERIENCE							= 10 	# Experience gained from surveyed planet
+		LEADER_SCIENTIST_SURVEY_EXPERIENCE							= 15 	# Experience gained from surveyed planet
+		
+#		LEADER_SCIENTIST_SUCCESSFUL_ANOMALY_RESEARCH_EXPERIENCE		= 50 	# Experience gained from a successful discovery research
+		LEADER_SCIENTIST_SUCCESSFUL_ANOMALY_RESEARCH_EXPERIENCE		= 75 	# Experience gained from a successful discovery research
+		
+#		LEADER_SCIENTIST_COMPLETED_SPECIAL_PROJECT_EXPERIENCE		= 100	# Experience gained from completing a special project
+		LEADER_SCIENTIST_COMPLETED_SPECIAL_PROJECT_EXPERIENCE		= 150	# Experience gained from completing a special project
+
+#		LEADER_SCIENTIST_COMPLETED_ARCHAEOLOGICAL_SITE_STAGE_EXPERIENCE = 75	# Experience gained from a successful archaeological site roll
+		LEADER_SCIENTIST_COMPLETED_ARCHAEOLOGICAL_SITE_STAGE_EXPERIENCE = 108	# Experience gained from a successful archaeological site roll
+
+#		LEADER_SCIENTIST_ASSIST_RESEARCH							= 0.10 	# Experience gained from assisting research per day
+		LEADER_SCIENTIST_ASSIST_RESEARCH							= 0.15 	# Experience gained from assisting research per day
+
+#		LEADER_GOVERNOR_MONTHLY_EXPERIENCE							= 5	# Monthy exp from governing sector.
+		LEADER_GOVERNOR_MONTHLY_EXPERIENCE							= 7.5 # Monthy exp from governing sector.
+
+#		EMPIRE_SIZE_TECH_COST_PENALTY			= 0.004	# Per empire size above base
+#		EMPIRE_SIZE_TECH_COST_PENALTY			= 0.008	# Per empire size above base
+
+#		EMPIRE_SIZE_TRADITION_COST_PENALTY		= 0.006	# Per empire size above base
+#		EMPIRE_SIZE_TRADITION_COST_PENALTY		= 0.012	# Per empire size above base
+
+#		TECH_WEIGHT_PREVIOUS_OPTION				= 0.5	# If a tech was one of the alternatives last time its weight will be multiplied with TECH_WEIGHT_PREVIOUS_OPTION
+		TECH_WEIGHT_PREVIOUS_OPTION				= 2.0	# If a tech was one of the alternatives last time its weight will be multiplied with TECH_WEIGHT_PREVIOUS_OPTION
+	}
+
+	NPop = {
+
+#		OVERCROWDING_NO_GROWTH_THRESHOLD	= 1.5	# At this amount of overcrowding, growth stops entirely
+		OVERCROWDING_NO_GROWTH_THRESHOLD	= 1.2	# At this amount of overcrowding, growth stops entirely
+
+#		OVERCROWDING_DECLINE_THRESHOLD		= 2.0	# At this amount of overcrowding, pops start declining
+		OVERCROWDING_DECLINE_THRESHOLD		= 1.5	# At this amount of overcrowding, pops start declining
+
+#		MAX_GROWTH_FROM_IMMIGRATION			= 5
+		MAX_GROWTH_FROM_IMMIGRATION			= 10
+
+	}
+
+	NAI = {
+#		AI_POP_MODIFICATION_DISCOUNT = 0.25			# AI pays this much (of base) for gene/robomodding projects
+		AI_POP_MODIFICATION_DISCOUNT = 1.00			# AI pays this much (of base) for gene/robomodding projects
+
+#		TERRAFORM_SAVE_CREDITS = 1000				# AI wants to have at least this much energy over after starting a terraforming
+		TERRAFORM_SAVE_CREDITS = 100				# AI wants to have at least this much energy over after starting a terraforming
+
+#		MAX_EXPANSION_DISTANCE = 2				# Max number of jumps away AI will build starbases
+		MAX_EXPANSION_DISTANCE = 99				# Max number of jumps away AI will build starbases
+
+#		MAX_EXPANSION_DISTANCE_SUBJECT = 2		# Max number of jumps away AI subjects will build starbases
+		MAX_EXPANSION_DISTANCE_SUBJECT = 99		# Max number of jumps away AI subjects will build starbases
+	}

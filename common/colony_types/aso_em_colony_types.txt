@@ -1,0 +1,73 @@
+#root = planet
+
+@small_planet_threshold = 18
+@free_districts_verylow_threshold = 3
+@free_districts_low_threshold = 5
+@free_districts_medium_threshold = 10
+@free_districts_high_threshold = 15
+@built_districts_low_threshold = 3
+@built_districts_medium_threshold = 4
+@built_districts_high_threshold = 8
+
+#Template
+#col_name = {
+#	icon = 1																#not sure what this is for. default has 11, city has 1, mining has 2
+#
+#	potential = {
+#		exists = owner
+#		owner = { is_regular_empire = yes, is_machine_empire = yes, etc.}
+#		has_upgraded_capital = yes/no										#no is only for the 'colony' designation
+#		NOR = { uses_district_set = city_world / ring_world / habitat }
+#		is_special_colony_type = no
+#		num_pops < 5														#used for 'colony' designation
+#	}
+#
+#	planet_modifier = {}
+#
+#	weight_modifier = { base = 1 }
+#}
+
+#Trade Colony
+col_aso_em_trade = {
+	icon = GFX_colony_aso_em_trade
+	
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		NOT = { uses_district_set = habitat }
+		is_special_colony_type = no
+	}
+	
+	planet_modifier = {
+		trade_value_mult = 0.25
+		job_merchant_per_pop = 0.025
+		job_clerk_per_pop = 0.05
+	}
+	
+	weight_modifier = {
+		base = 1
+		modifier = {
+			factor = 2
+			owner = { has_monthly_income = { resource = energy value < 0 } }
+		}
+		modifier = {
+			factor = 0.1
+			has_designation = col_generator
+		}
+		modifier = {
+			factor = 3
+			has_designation = col_aso_em_trade
+		}
+		modifier = {
+			factor = 3
+			num_buildings = {
+				type = building_commercial_zone
+				value >= 3
+			}
+		}
+		modifier = {
+			factor = 2
+			owner = { is_megacorp = yes }
+		}
+	}
+}

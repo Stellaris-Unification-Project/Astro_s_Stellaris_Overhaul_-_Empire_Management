@@ -1,0 +1,854 @@
+####################################
+#### New SOCIETY technologies   ####
+####################################
+## Repeatables
+# BIOLOGY
+# tech_aso_em_pop_modify_cost: -5% Special Project Cost for Modifying Pops
+# tech_aso_em_pop_speed: +5% Pop Growth Speed
+# tech_aso_em_trait_points: +1 Pop Trait Points
+#
+# MILITARY THEORY
+# tech_aso_em_ship_force_disparity: +10% Ship Force Disparity Bonus
+# tech_aso_em_army_experience: +10% Army Experience Gain
+# tech_aso_em_country_claim_cost: -5% Claim Influence Cost
+# tech_aso_em_planet_occupation_armies: +2 Max Occupation Armies
+# tech_aso_em_country_federation_naval_contribution: +5% Federation Naval Capacity Contribution
+# tech_aso_em_army_defense_damage: +15% Defense Army Damage
+#
+# NEW WORLDS
+# tech_aso_em_planet_terraforming_cost: -5% Terraforming Cost
+# tech_aso_em_planet_terraforming_speed: +5% Terraforming Speed
+# tech_aso_em_pop_environment_tolerance: +5% Habitability
+#
+# STATECRAFT
+# tech_aso_em_ascension_theory_repeatable: +1 Ascension Perk
+# tech_aso_em_pop_demotion_time: -10% Pop Demotion Time
+# tech_aso_em_pop_ethics_shift_speed: +10% Pop Ethics Shift Speed
+# tech_aso_em_country_envoys: +1 Envoy
+# tech_aso_em_country_leader_experience: +10% Leader Experience Gain
+# tech_aso_em_country_subject_integration_cost: -10% Subject Influence Integration Cost
+# tech_aso_em_country_trade_attractiveness: +5% Trade Attractiveness
+# tech_aso_em_country_trust_cap: +25 Trust Cap
+# tech_aso_em_planet_amenities: +5% Amenities
+# tech_aso_em_planet_crime: -5% Crime
+# tech_aso_em_country_faction_influence: +0.5 Faction Influence Gain
+# tech_aso_em_influence_gain_add: +0.5 Influence Gain
+# tech_aso_em_edict_cap_add: +1 Edict Cap
+# tech_aso_em_unity_output: +5% Unity Output
+# tech_aso_em_country_edict_cost: -5% Edict Cost
+# tech_aso_em_country_diplomatic_weight: +5% Diplomatic Weight
+
+
+
+
+# BIOLOGY
+# tech_aso_em_pop_modify_cost: -5%
+# tech_aso_em_pop_speed: +5%
+# tech_aso_em_trait_points: +1
+
+#REPEATABLES
+tech_aso_em_pop_modify_cost = {
+	area = society
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { biology }
+	levels = 5
+	prerequisites = { "tech_gene_tailoring" }
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { modify_species_cost_mult = -0.05 }
+}
+
+tech_aso_em_pop_speed = {
+	area = society
+	cost = @repeatableTechBaseCost3
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier3
+	category = { biology }
+	levels = 5
+	potential = {
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_civic = civic_machine_assimilator
+		}
+	}
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { pop_growth_speed = 0.05 }
+}
+
+tech_aso_em_trait_points = {
+	area = society
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { biology }
+	levels = 5
+	prerequisites = { "tech_gene_tailoring" }
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = {
+		description = tech_gene_expressions_modifier_desc
+		description_parameters = { POINTS = 1 }
+		BIOLOGICAL_species_trait_points_add = 1
+	}
+}
+
+# MILITARY THEORY
+# tech_aso_em_ship_force_disparity: +10%
+# tech_aso_em_army_experience: +10%
+# tech_aso_em_country_claim_cost: -5%
+# tech_aso_em_planet_occupation_armies: +2
+# tech_aso_em_country_federation_naval_contribution: +5%
+# tech_aso_em_army_defense_damage: +15%
+
+tech_aso_em_ship_force_disparity = {
+	area = society
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { military_theory }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { force_disparity_fire_rate_mult = 0.1 }
+}
+
+tech_aso_em_army_experience = {
+	area = society
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { military_theory }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { army_experience_gain_mult = 0.1 }
+}
+
+tech_aso_em_country_claim_cost = {
+	area = society
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { military_theory }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+	potential = {
+		NOR = {
+			has_civic = civic_fanatic_purifiers
+			has_civic = civic_hive_devouring_swarm
+			has_civic = civic_machine_terminator
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { country_claim_influence_cost_mult = -0.05 }
+}
+
+tech_aso_em_planet_occupation_armies = {
+	area = society
+	cost = @repeatableTechBaseCost3
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier3
+	category = { military_theory }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { country_occupation_armies_add = 2 }
+}
+
+tech_aso_em_country_federation_naval_contribution = {
+	area = society
+	cost = @repeatableTechBaseCost
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier
+	category = { military_theory }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+		modifier = {
+			factor = 0
+			has_federation = no
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	potential = { has_federation = yes }
+	modifier = { federation_naval_cap_contribution_mult = 0.05 }
+}
+
+tech_aso_em_army_defense_damage = {
+	area = society
+	cost = @repeatableTechBaseCost3
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier3
+	category = { military_theory }
+	levels = 5
+
+	prerequisites = { "tech_global_defense_grid" }
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { army_defense_damage_mult = 0.15 }
+}
+
+# NEW WORLDS
+# tech_aso_em_planet_terraforming_cost: -5%
+# tech_aso_em_planet_terraforming_speed: +5%
+# tech_aso_em_pop_environment_tolerance: +5%
+
+tech_aso_em_planet_terraforming_cost = {
+	area = society
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { new_worlds }
+	levels = 5
+	prerequisites = { "tech_terrestrial_sculpting" }
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { terraforming_cost_mult = -0.05 }
+}
+
+tech_aso_em_planet_terraforming_speed = {
+	area = society
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { new_worlds }
+	levels = 5
+	prerequisites = { "tech_terrestrial_sculpting" }
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { terraform_speed_mult = 0.05 }
+}
+
+tech_aso_em_pop_environment_tolerance = {
+	area = society
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { new_worlds }
+	levels = 5
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { pop_environment_tolerance = 0.05 }
+}
+
+# STATECRAFT
+# tech_aso_em_ascension_theory_repeatable: +1
+# tech_aso_em_pop_demotion_time: -10%
+# tech_aso_em_pop_ethics_shift_speed: +10%
+# tech_aso_em_country_envoys: +1
+# tech_aso_em_country_leader_experience: +10%
+# tech_aso_em_country_subject_integration_cost: -10%
+# tech_aso_em_country_trade_attractiveness: +5%
+# tech_aso_em_country_trust_cap: +25
+# tech_aso_em_planet_crime: -5%
+# tech_aso_em_country_faction_influence: +0.5
+# tech_aso_em_influence_gain_add: +0.5
+# tech_aso_em_edict_cap_add: +1
+# tech_aso_em_unity_output: +5%
+# tech_aso_em_country_edict_cost: -5%
+# tech_aso_em_country_diplomatic_weight: +5%
+
+tech_aso_em_ascension_theory_repeatable = {
+	area = society
+	cost = @repeatableTechBaseCost
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier
+	category = { statecraft }
+	levels = 5
+	is_rare = yes
+	prerequisites = { "tech_ascension_theory" }
+	weight = @repeatableTechWeight
+
+	modifier = { ascension_perks_add = 1 }
+
+	feature_flags = { unity_ambitions }
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = 0.20
+			NOR = {
+				has_modifier = "curator_insight"
+				research_leader = {
+					area = society
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = society
+					has_trait = "leader_trait_expertise_statecraft"
+				}
+			}
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = tech_ascension_theory }
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+
+	ai_weight = { weight = 9999 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+}
+
+tech_aso_em_pop_demotion_time = {
+	area = society
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	potential = {
+		NOR = {
+			has_authority = auth_machine_intelligence
+			has_authority = auth_hive_mind
+		}
+	}
+	modifier = { pop_demotion_time_mult = -0.10 }
+}
+
+tech_aso_em_pop_ethics_shift_speed = {
+	area = society
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	potential = {
+		NOR = {
+			has_authority = auth_machine_intelligence
+			has_authority = auth_hive_mind
+		}
+	}
+	modifier = { pop_ethics_shift_speed_mult = 0.1 }
+}
+
+tech_aso_em_country_envoys = {
+	area = society
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	potential = {
+		NOR = {
+			has_civic = civic_fanatic_purifiers
+			has_civic = civic_hive_devouring_swarm
+			has_civic = civic_machine_terminator
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { envoys_add = 1 }
+}
+
+tech_aso_em_country_leader_experience = {
+	area = society
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { species_leader_exp_gain = 0.10 }
+}
+
+tech_aso_em_country_subject_integration_cost = {
+	area = society
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+		modifier = {
+			factor = 0
+			is_overlord = no
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	potential = { is_overlord = yes }
+	modifier = { subject_integration_influence_cost_mult = -0.1 }
+}
+
+tech_aso_em_country_trade_attractiveness = {
+	area = society
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	potential = {
+		NOR = {
+			has_civic = civic_fanatic_purifiers
+			has_civic = civic_hive_devouring_swarm
+			has_civic = civic_machine_terminator
+		}
+	}
+	modifier = { country_trade_attractiveness = 0.05 }
+}
+
+tech_aso_em_country_trust_cap = {
+	area = society
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	potential = {
+		NOR = {
+			has_civic = civic_fanatic_purifiers
+			has_civic = civic_hive_devouring_swarm
+			has_civic = civic_machine_terminator
+		}
+	}
+	modifier = { country_trust_cap_add = 25 }
+}
+
+tech_aso_em_planet_amenities = {
+	area = society
+	cost = @repeatableTechBaseCost3
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier3
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { planet_amenities_mult = 0.05 }
+}
+
+tech_aso_em_planet_crime = {
+	area = society
+	cost = @repeatableTechBaseCost3
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier3
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { planet_crime_mult = -0.05 }
+}
+
+tech_aso_em_country_faction_influence = {
+	area = society
+	cost = @repeatableTechBaseCost3
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier3
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = { factor = @repeatableTechFactor }
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	potential = {
+		NOR = {
+			has_authority = auth_machine_intelligence
+			has_authority = auth_hive_mind
+		}
+	}
+	modifier = { pop_factions_influence_produces_add = 0.5 }
+}
+
+tech_aso_em_influence_gain_add = {
+	area = society
+	cost = @repeatableTechBaseCost3
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier3
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { country_base_influence_produces_add = 0.5 }
+}
+
+tech_aso_em_edict_cap_add = {
+	area = society
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { country_edict_cap_add = 1 }
+}
+
+tech_aso_em_unity_output = {
+	area = society
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { country_unity_produces_mult = 0.05 }
+}
+
+tech_aso_em_country_diplomatic_weight = {
+	area = society
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	potential = {
+		NOR = {
+			has_civic = civic_fanatic_purifiers
+			has_civic = civic_hive_devouring_swarm
+			has_civic = civic_machine_terminator
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { diplo_weight_mult = 0.05 }
+}
+
+tech_aso_em_country_edict_cost = {
+	area = society
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { statecraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { edicts_cost_mult = -0.05 }
+}

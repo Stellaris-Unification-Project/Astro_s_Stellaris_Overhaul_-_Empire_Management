@@ -1,0 +1,424 @@
+#####################################################
+#### New ENGINEERING technologies                ####
+#####################################################
+#
+## Repeatables
+# INDUSTRY
+# tech_aso_em_planet_non_artificial_max_districts_add: +1 Max District per Planet
+# tech_aso_em_country_megastructure_speed: +5% Megastructure Build Speed
+# tech_aso_em_planet_building_upkeep: -5% Building Upkeep
+# tech_aso_em_pop_machine_speed: -5% Pop Build Speed
+# tech_aso_em_pop_machine_trait_point: +1 Machine Trait Point
+# tech_aso_em_pop_robot_trait_point: +1 Robot Trait Point
+# tech_aso_em_station_mining: +10% Minerals from Mining Stations
+#
+# MATERIALS
+# tech_aso_em_metallurgists_produces_mult: +5% Metallurgist Production
+# tech_aso_em_ship_orbital_bombardment_mult: +10% Orbital Bombardment Damage
+# tech_aso_em_ship_upkeep_mult: -5% Ship Upkeep
+#
+# PROPULSION
+# tech_aso_em_ship_speed_mult: +5% Ship Speed
+#
+# VOIDCRAFT
+# tech_aso_em_starbase_defense_platform_capacity_add: +2 Defense Platform Capacity
+# tech_aso_em_ship_build_cost: -5% Ship Build Cost
+# tech_aso_em_ship_build_speed: +5% Ship Build Speed
+# tech_aso_em_ship_upgrade_cost: -5% Ship Upgrade Cost
+#
+
+###############################################
+#### Repeatable ENGINEERING technologies   ####
+###############################################
+
+# INDUSTRY
+# tech_aso_em_planet_non_artificial_max_districts_add: +1
+# tech_aso_em_country_megastructure_speed: +5%
+# tech_aso_em_planet_building_upkeep: -5%
+# tech_aso_em_pop_machine_speed: -5%
+# tech_aso_em_pop_machine_trait_point: +1
+# tech_aso_em_pop_robot_trait_point: +1
+# tech_aso_em_station_mining: +10%
+
+tech_aso_em_station_mining = {
+	area = engineering
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { industry }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { station_gatherers_produces_mult = 0.10 }
+}
+
+tech_aso_em_planet_non_artificial_max_districts_add = {
+	area = engineering
+	cost = @repeatableTechBaseCost6
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier6
+	category = { industry }
+	levels = 5
+	prerequisites = { "tech_mega_engineering" }
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { planet_non_artificial_max_districts_add = 1 }
+}
+
+tech_aso_em_country_megastructure_speed = {
+	area = engineering
+	cost = @repeatableTechBaseCost6
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier6
+	category = { industry }
+	levels = 5
+	prerequisites = { "tech_mega_engineering" }
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { megastructure_build_speed_mult = 0.05 }
+}
+
+tech_aso_em_planet_building_upkeep = {
+	area = engineering
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { industry }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { planet_buildings_upkeep_mult = -0.05 }
+}
+
+tech_aso_em_pop_machine_speed = {
+	area = engineering
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { industry }
+	levels = 5
+	prerequisites = { "tech_micro_replicators" }
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { planet_pop_assembly_mult = 0.05 }
+}
+
+tech_aso_em_pop_machine_trait_point = {
+	area = engineering
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { industry }
+	prerequisites = { "tech_micro_replicators" }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { MACHINE_species_trait_points_add = 1 }
+}
+
+tech_aso_em_pop_robot_trait_point = {
+	area = engineering
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { industry }
+	prerequisites = { "tech_robomodding_points_2" }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	potential = {
+		NOR = { 
+			has_authority = auth_hive_mind
+			has_authority = auth_machine_intelligence
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ROBOT_species_trait_points_add = 1 }
+}
+
+
+# MATERIALS
+# tech_aso_em_metallurgists_produces_mult: +5%
+# tech_aso_em_ship_orbital_bombardment_mult: +10%
+# tech_aso_em_ship_upkeep_mult: -5%
+
+tech_aso_em_metallurgists_produces_mult = {
+	area = engineering
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { materials }
+	levels = 5
+	weight = @repeatableTechWeight
+
+	modifier = { planet_metallurgists_produces_mult = 0.10 }
+
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+}
+
+tech_aso_em_ship_orbital_bombardment_mult = {
+	area = engineering
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { materials }
+	levels = 5
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ship_orbital_bombardment_mult = 0.10 }
+}
+
+tech_aso_em_ship_upkeep_mult = {
+	area = engineering
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { materials }
+	levels = 5
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ships_upkeep_mult = -0.05 }
+}
+
+# PROPULSION
+# tech_aso_em_ship_speed_mult: +5%
+
+tech_aso_em_ship_speed_mult = {
+	area = engineering
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { propulsion }
+	levels = 5
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ship_speed_mult = 0.05 }
+}
+
+# VOIDCRAFT
+# tech_aso_em_starbase_defense_platform_capacity_add: +2
+# tech_aso_em_ship_build_cost: -5%
+# tech_aso_em_ship_build_speed: +5%
+# tech_aso_em_ship_upgrade_cost: -5%
+
+tech_aso_em_ship_build_speed = {
+	area = engineering
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { voidcraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { starbase_shipyard_build_speed_mult = 0.05 }
+}
+
+tech_aso_em_ship_build_cost = {
+	area = engineering
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { voidcraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { starbase_shipyard_build_cost_mult = -0.05 }
+}
+
+tech_aso_em_starbase_defense_platform_capacity_add = {
+	area = engineering
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { voidcraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { starbase_defense_platform_capacity_add = 2 }
+}
+
+tech_aso_em_ship_upgrade_cost = {
+	area = engineering
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { voidcraft }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { country_ship_upgrade_cost_mult = -0.05 }
+}

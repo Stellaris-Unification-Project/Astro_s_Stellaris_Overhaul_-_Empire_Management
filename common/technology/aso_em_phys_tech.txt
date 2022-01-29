@@ -1,0 +1,461 @@
+#####################################################
+#### New PHYSICS technologies                    ####
+#####################################################
+#
+## Repeatables
+# COMPUTING
+# tech_aso_em_science_ship_survey_speed: +20% Science Ship Survey Speed
+# tech_aso_em_ship_weapon_range_mult: +10% Ship Weapon Range
+# tech_aso_em_weapon_role_point_defense_weapon_fire_rate_mult: +10% Point Defense Fire Rate
+# tech_aso_em_ship_weapon_damage: +5% Ship Weapon Damage
+# tech_aso_em_pop_consumer_goods_upkeep: -5% Pop Consumer Goods Upkeep
+# tech_aso_em_pop_job_farmer_output: +5% Farmer Output
+# tech_aso_em_pop_job_researcher_output: +10% Researcher Output
+# tech_aso_em_station_research: +10% Research Station Output
+#
+# FIELD MANIPULATION
+# tech_aso_em_ship_shield_damage_mult: +5% Ship Shield Damage
+# tech_aso_em_pop_job_technician_output: +10% Technician Output
+# tech_aso_em_pop_robot_upkeep: -5% Robot Upkeep
+# 
+# PARTICLES
+# tech_aso_em_ship_hull_damage_mult: +5% Ship Hull Damage
+# tech_aso_em_ship_armor_damage_mult: +5% Ship Armor Damage
+# tech_aso_em_pop_job_miner_output: +5% Miner Output
+# tech_aso_em_ship_sensor_range: +1 Ship Sensor Range
+# tech_aso_em_ship_fire_speed: +5% Ship Fire Speed
+# 
+###########################################
+#### Repeatable PHYSICS technologies   ####
+###########################################
+
+# COMPUTING
+# tech_aso_em_science_ship_survey_speed: +20%
+# tech_aso_em_ship_weapon_range_mult: +10%
+# tech_aso_em_weapon_role_point_defense_weapon_fire_rate_mult: +10%
+# tech_aso_em_ship_weapon_damage: +5%
+# tech_aso_em_pop_consumer_goods_upkeep: -5%
+# tech_aso_em_pop_job_farmer_output: +5%
+# tech_aso_em_pop_job_researcher_output: +10%
+# tech_aso_em_station_research: +10%
+
+tech_aso_em_science_ship_survey_speed = {
+	area = physics
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	levels = 5
+	category = { computing }
+	weight = @repeatableTechWeight
+
+	modifier = { science_ship_survey_speed = 0.20 }
+
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+}
+
+tech_aso_em_station_research = {
+	area = physics
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { computing }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+	}
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { station_researchers_produces_mult = 0.1 }
+}
+
+tech_aso_em_pop_job_researcher_output = {
+	area = physics
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { computing }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = {
+		planet_researchers_engineering_research_produces_mult = 0.1
+		planet_researchers_physics_research_produces_mult = 0.1
+		planet_researchers_society_research_produces_mult = 0.1
+	}
+}
+
+tech_aso_em_pop_consumer_goods_upkeep = {
+	area = physics
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { computing }
+	levels = 5
+	potential = {
+		OR = {
+			is_gestalt = no
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { planet_pops_consumer_goods_upkeep_mult = -0.05 }
+}
+
+tech_aso_em_pop_job_farmer_output = {
+	area = physics
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { computing }
+	prerequisites = { "tech_nutrient_replication" }
+	potential = { NOT = { has_authority = auth_machine_intelligence } }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { planet_farmers_food_produces_mult = 0.05 }
+}
+
+tech_aso_em_ship_weapon_range_mult = {
+	area = physics
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { computing }
+	levels = 5
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ship_weapon_range_mult = 0.10 }
+}
+
+tech_aso_em_weapon_role_point_defense_weapon_fire_rate_mult = {
+	area = physics
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { computing }
+	levels = 5
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { weapon_role_point_defense_weapon_fire_rate_mult = 0.10 }
+}
+
+tech_aso_em_ship_weapon_damage = {
+	area = physics
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { computing }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ship_weapon_damage = 0.05 }
+}
+
+# FIELD MANIPULATION
+# tech_aso_em_ship_shield_damage_mult: +5%
+# tech_aso_em_pop_job_technician_output: +10%
+# tech_aso_em_pop_robot_upkeep: -5%
+
+tech_aso_em_pop_job_technician_output = {
+	area = physics
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { field_manipulation }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { planet_technician_energy_produces_mult = 0.10 }
+}
+
+tech_aso_em_pop_robot_upkeep = {
+	area = physics
+	cost = @repeatableTechBaseCost2
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier2
+	category = { field_manipulation }
+	levels = 5
+	prerequisites = { "tech_robotic_workers" }
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { planet_pops_robotics_upkeep_mult = -0.05 }
+}
+
+tech_aso_em_ship_shield_damage_mult = {
+	area = physics
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { field_manipulation }
+	levels = 5
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ship_shield_damage_mult = 0.05 }
+}
+
+# PARTICLES
+# tech_aso_em_ship_hull_damage_mult: +5%
+# tech_aso_em_ship_armor_damage_mult: +5%
+# tech_aso_em_pop_job_miner_output: +5%
+# tech_aso_em_ship_sensor_range: +1
+# tech_aso_em_ship_fire_speed: +5%
+
+tech_aso_em_ship_sensor_range = {
+	area = physics
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { particles }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ship_sensor_range_add = 1 }
+}
+
+tech_aso_em_pop_job_miner_output = {
+	area = physics
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { particles }
+	prerequisites = { "tech_mining_3" }
+	levels = 5
+
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { planet_miners_minerals_produces_add = 0.5 }
+}
+
+tech_aso_em_ship_hull_damage_mult = {
+	area = physics
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { particles }
+	levels = 5
+	weight = @repeatableTechWeight
+
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ship_hull_damage_mult = 0.05 }
+}
+
+tech_aso_em_ship_armor_damage_mult = {
+	area = physics
+	cost = @repeatableTechBaseCost5
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier5
+	category = { particles }
+	levels = 5
+	weight = @repeatableTechWeight
+	
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ship_armor_damage_mult = 0.05 }
+}
+
+tech_aso_em_ship_fire_speed = {
+	area = physics
+	cost = @repeatableTechBaseCost4
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier4
+	category = { particles }
+	levels = 5
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repeatableTechFactor
+		modifier = {
+			factor = 3
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+	ai_weight = { factor = 1.0 }
+	weight_groups = { repeatable }
+	mod_weight_if_group_picked = { repeatable = 0.01 }
+	modifier = { ship_fire_rate_mult = 0.05 }
+}

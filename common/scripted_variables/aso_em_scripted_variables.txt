@@ -1,0 +1,18 @@
+##################
+### TECH COSTS ###
+##################
+
+# REPEATABLE TECHS
+@repeatableTechBaseCost2 = 6000
+@repeatableTechBaseCost3 = 12000
+@repeatableTechBaseCost4 = 24000
+@repeatableTechBaseCost5 = 48000
+@repeatableTechBaseCost6 = 60000
+
+@repeatableTechTier2 = 2
+@repeatableTechTier3 = 3
+@repeatableTechTier4 = 4
+@repeatableTechTier5 = 5
+@repeatableTechTier6 = 6
+
+@repeatableTechFactor = 0.5

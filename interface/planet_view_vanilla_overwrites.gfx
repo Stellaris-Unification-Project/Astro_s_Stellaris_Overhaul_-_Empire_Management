@@ -1,0 +1,12 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_colony_type"
+		textureFile = "gfx/interface/planetview/aso_em_colony_type.dds"
+		noOfFrames = 34
+	}
+	spriteType = {
+		name = "GFX_colony_aso_em_trade"
+		sprite_sheet_sprite_type = "GFX_colony_type"
+		default_frame = 34
+	}
+}
